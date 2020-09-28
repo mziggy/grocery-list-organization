@@ -1,0 +1,18 @@
+<h3>Insert list here</h3>
+<form id = "addForm" (ngSubmit)="addItem(listform)" #listform = "ngForm">
+  <label>
+    <input [(ngModel)]="item" name = "item" placeholder="item name">
+  </label>
+  <label>
+    <input [(ngModel)]="amount" name = "amount" placeholder="item amount">
+  </label>
+  <label>
+    <input [(ngModel)]="unit" name = "unit" placeholder="item unit">
+  </label>
+  <button>Add</button>
+</form>
+<ul class="list">
+  <li *ngFor="let gItem of groceryList">
+    <span class="item">{{gItem.item}} - {{gItem.amount}} {{gItem.unit}}</span>
+  </li>
+</ul>
