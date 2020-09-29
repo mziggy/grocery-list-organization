@@ -9,10 +9,24 @@
   <label>
     <input [(ngModel)]="unit" name = "unit" placeholder="item unit">
   </label>
-  <button>Add</button>
+  <button id="addBtn">Add</button>
 </form>
 <ul class="list">
-  <li *ngFor="let gItem of groceryList">
-    <span class="item">{{gItem.item}} - {{gItem.amount}} {{gItem.unit}}</span>
+  <li *ngFor="let gItem of groceryList"
+  [class.selected]="gItem === selectedItem">
+    <span (click)="onSelect(gItem)" class="item">{{gItem.item}} - {{gItem.amount}} {{gItem.unit}}</span>
+    <div id = "updateItem">
+      <label>
+        <input [(ngModel)]="editItem" name = "editItem" placeholder="item name">
+      </label>
+      <label>
+        <input [(ngModel)]="editAmount" name = "editAmount" placeholder="item amount">
+      </label>
+      <label>
+        <input [(ngModel)]="editUnit" name = "editUnit" placeholder="item unit">
+      </label>
+      <button id="saveBtn" (click)="saveItem()">Save</button>
+      <button id="deleteBtn" (click)="deleteItem()">Delete</button>
+    </div>
   </li>
 </ul>

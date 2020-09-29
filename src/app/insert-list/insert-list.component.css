@@ -1,0 +1,15 @@
+.selected #updateItem{
+  display: block;
+}
+
+.selected .item{
+  display: none;
+}
+
+#updateItem {
+  display: none;
+}
+
+
+
+
